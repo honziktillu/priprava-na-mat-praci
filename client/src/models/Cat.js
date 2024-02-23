@@ -7,6 +7,11 @@ export const getAllCats = async () => {
     method: "GET",
   });
   const data = await req.json();
+  return {
+    status: req.status,
+    msg: data.msg,
+    payload: data.payload
+  }
 };
 export const getCatById = async (id) => {
   const req = await fetch(`http://localhost:3000/cats/${id}`, {
@@ -17,6 +22,11 @@ export const getCatById = async (id) => {
     method: "GET",
   });
   const data = await req.json();
+  return {
+    status: req.status,
+    msg: data.msg,
+    payload: data.payload
+  }
 };
 
 export const createCat = async (formData) => {
@@ -29,6 +39,11 @@ export const createCat = async (formData) => {
     body: JSON.stringify(formData),
   });
   const data = await req.json();
+  return {
+    status: req.status,
+    msg: data.msg,
+    payload: data.payload
+  }
 };
 
 export const updateCat = async (id, formData) => {
@@ -41,6 +56,11 @@ export const updateCat = async (id, formData) => {
     body: JSON.stringify(formData),
   });
   const data = await req.json();
+  return {
+    status: req.status,
+    msg: data.msg,
+    payload: data.payload
+  }
 };
 
 export const deleteCat = async (id) => {
@@ -52,4 +72,9 @@ export const deleteCat = async (id) => {
     method: "DELETE",
   });
   const data = await req.json();
+  return {
+    status: req.status,
+    msg: data.msg,
+    payload: data.payload
+  }
 };
